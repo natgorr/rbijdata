@@ -25,6 +25,13 @@
     }
     .container{ max-width: 1100px; margin: 0 auto; }
 
+    /* Links */
+    a{
+      color: var(--ink);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
     /* Two equal columns */
     .grid{
       display: grid;
@@ -76,8 +83,20 @@
           <ul>
             <li>Sign-on statement</li>
             <li>Private advocacy</li>
-            <li>Op-ed: Elizabeth Anderson, CEO of Lunar Labs</li>
-            <li>Blog: STRIVE on their Alabama Program</li>
+            <li>
+              Op-ed:
+              <a href="https://www.alreporter.com/2025/04/17/opinion-reforms-to-occupational-licensing-offer-solutions-to-alabamas-labor-shortages-without-compromising-safety/"
+                 target="_blank" rel="noopener noreferrer">
+                Elizabeth Anderson, CEO of Lunar Labs
+              </a>
+            </li>
+            <li>
+              Blog:
+              <a href="https://blog.strive.org/blog/alabama-businesses-need-skilled-talent-commonsense-occupational-licensing-reform-will-help"
+                 target="_blank" rel="noopener noreferrer">
+                STRIVE on their Alabama Program
+              </a>
+            </li>
           </ul>
           <p>
             In May 2025, Governor Ivey signed this legislation into law, ensuring fairer access to
@@ -91,7 +110,12 @@
         <h2 class="col-title">Stats</h2>
         <div class="stat-stack" aria-label="Alabama stats">
           <div class="stat">
-            <p><b>~900,000 Alabamians — 22%</b> of the state’s adult population have some form of arrest or conviction record.</p>
+            <p>
+              ~<b><a href="https://www.cleanslateinitiative.org/data"
+                    target="_blank" rel="noopener noreferrer">900,000</a></b>
+              Alabamians — 22% of the state’s adult population have some form of arrest or
+              conviction record.
+            </p>
           </div>
           <div class="stat">
             <p>In Alabama, <b>1 in 5 workers</b> must obtain a license for fields as varied as plumbing, dentistry, nursing, cosmetology, and law.</p>
