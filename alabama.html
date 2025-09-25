@@ -5,34 +5,30 @@
   <title>Alabama – Past Wins</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
-    /* --- Base / theme --- */
+    /* ---- Theme ---- */
     :root{
-      --bg: #e6f0fa;          /* page background */
-      --panel: #b3d1f7;       /* outer container */
-      --card: #ffffff;        /* inner cards */
-      --ink: #14365c;         /* headings/text */
-      --ink-sub: #2a4d7e;     /* sub text */
-      --muted: #6d88ad;       /* muted text */
-      --radius: 14px;
-      --shadow: 0 6px 18px rgba(20, 54, 92, 0.08);
+      --page-bg: #ffffff;     /* page background (white) */
+      --panel-left: #cfe0f1;  /* left big block blue (medium) */
+      --panel-stat: #e3eef8;  /* right stat tiles (light) */
+      --ink: #173b63;         /* headings / strong body */
+      --ink-sub: #294f7f;     /* normal body text */
+      --muted: #6e86a7;
+      --gap: 24px;
     }
 
-    * { box-sizing: border-box; }
+    *{ box-sizing: border-box; }
     body{
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Arial, sans-serif;
-      background: var(--bg);
-      color: var(--ink);
+      background: var(--page-bg);
+      color: var(--ink-sub);
       line-height: 1.55;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Arial, sans-serif;
+      padding: 40px 32px;
     }
 
-    /* --- Page container --- */
     .container{
-      background: var(--panel);
-      margin: 40px auto;
-      padding: 28px;
       max-width: 1100px;
-      border-radius: var(--radius);
+      margin: 0 auto;
     }
 
     .heading{
@@ -40,54 +36,63 @@
       color: var(--ink);
       font-weight: 800;
       letter-spacing: .2px;
+      font-size: 28px;
     }
 
-    /* --- Grid like the second image --- */
+    /* Two-column layout like your reference */
     .grid{
       display: grid;
       grid-template-columns: 1.1fr .9fr;
-      gap: 22px;
+      gap: var(--gap);
     }
     @media (max-width: 900px){
       .grid{ grid-template-columns: 1fr; }
     }
 
-    /* --- Cards --- */
-    .card{
-      background: var(--card);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 22px 22px;
+    /* Square blue blocks (no rounded corners, no shadows) */
+    .block{
+      border-radius: 0;       /* square corners */
+      padding: 28px;
     }
-    .card h3{
-      margin: 0 0 10px;
+    .block h3{
+      margin: 0 0 14px;
       color: var(--ink);
-      font-size: 20px;
+      font-size: 22px;
     }
-    .card p{ margin: 10px 0; color: var(--ink-sub); }
-    .card ul{ margin: 12px 0 0 18px; color: var(--ink-sub); }
-    .card li{ margin: 6px 0; }
+    .block p{ margin: 10px 0; }
+    .block ul{ margin: 12px 0 0 20px; }
+    .block li{ margin: 6px 0; }
 
-    /* --- Stat cards on the right --- */
+    /* Left narrative panel */
+    .panel-left{
+      background: var(--panel-left);
+    }
+
+    /* Right side: title + stack of stat tiles */
+    .right-col{
+      display: grid;
+      grid-template-rows: auto 1fr;
+      gap: 12px;
+      align-content: start;
+    }
+    .right-title{
+      margin: 0;
+      color: var(--ink);
+      font-weight: 800;
+      font-size: 22px;
+    }
     .stat-stack{
       display: grid;
       gap: 16px;
-      align-content: start;
     }
     .stat{
-      background: var(--card);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 18px 18px;
-    }
-    .stat b{
-      font-weight: 800;
-      color: var(--ink);
+      background: var(--panel-stat);
     }
     .stat p{
       margin: 0;
-      color: var(--ink-sub);
+      font-size: 18px;
     }
+    .stat b{ color: var(--ink); font-weight: 800; }
     .muted{ color: var(--muted); }
   </style>
 </head>
@@ -96,9 +101,9 @@
     <h2 class="heading">Past Wins</h2>
 
     <div class="grid">
-      <!-- LEFT: one block for the Past Wins narrative -->
-      <section class="card" aria-labelledby="past-wins-title">
-        <h3 id="past-wins-title">Alabama Occupational Licensing</h3>
+      <!-- LEFT: one blue block -->
+      <section class="block panel-left" aria-labelledby="pw-title">
+        <h3 id="pw-title">Alabama Occupational Licensing</h3>
         <p>
           RBIJ mobilized businesses — and their leaders — to publicly and privately support
           legislation that expands access to occupational licensing in Alabama by:
@@ -113,16 +118,22 @@
         </p>
       </section>
 
-      <!-- RIGHT: each stat bullet becomes its own card -->
-      <aside class="stat-stack" aria-label="Alabama stats">
-        <div class="stat">
-          <p><b>~900,000 Alabamians</b> — <b>22%</b> of the state’s adult population — have some form of arrest or conviction record.</p>
-        </div>
-        <div class="stat">
-          <p>In Alabama, <b>1 in 5 workers</b> must obtain a license for fields as varied as plumbing, dentistry, nursing, cosmetology, and law.</p>
-        </div>
-        <div class="stat">
-          <p>There are only <b>38 available workers</b> for every <b>100 open jobs</b>.</p>
+      <!-- RIGHT: title + stat tiles -->
+      <aside class="right-col" aria-label="Alabama stats">
+        <h3 class="right-title">Stats</h3>
+
+        <div class="stat-stack">
+          <div class="block stat">
+            <p><b>~900,000 Alabamians — 22%</b> of the state’s adult population have some form of arrest or conviction record.</p>
+          </div>
+
+          <div class="block stat">
+            <p>In Alabama, <b>1 in 5 workers</b> must obtain a license for fields as varied as plumbing, dentistry, nursing, cosmetology, and law.</p>
+          </div>
+
+          <div class="block stat">
+            <p>There are only <b>38 available workers</b> for every <b>100 open jobs</b>.</p>
+          </div>
         </div>
       </aside>
     </div>
