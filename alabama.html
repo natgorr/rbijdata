@@ -2,16 +2,16 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Alabama – Past Wins</title>
+  <title>Alabama – Past wins & Stats</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
-    /* ---- Theme ---- */
+    /* ===== Theme ===== */
     :root{
-      --page-bg: #ffffff;      /* page background (white) */
-      --panel: #d5e4f5;        /* unified block blue */
-      --ink: #173b63;          /* headings / strong body */
-      --ink-sub: #294f7f;      /* normal body text */
-      --gap: 24px;
+      --page-bg: #ffffff;     /* white page */
+      --panel:   #cfe0f1;     /* blue blocks — same everywhere */
+      --ink:     #143b63;     /* headings / strong */
+      --ink-sub: #2a4d7e;     /* body */
+      --gap:     24px;
     }
 
     *{ box-sizing: border-box; }
@@ -23,83 +23,71 @@
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Arial, sans-serif;
       padding: 40px 32px;
     }
+    .container{ max-width: 1100px; margin: 0 auto; }
 
-    .container{
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    /* Two-column layout */
+    /* Two equal columns */
     .grid{
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: var(--gap);
+      align-items: start;
     }
-    @media (max-width: 900px){
-      .grid{ grid-template-columns: 1fr; }
+    @media (max-width: 900px){ .grid{ grid-template-columns: 1fr; } }
+
+    /* Column titles OUTSIDE the blocks */
+    .col-title{
+      margin: 0 0 14px 0;
+      color: var(--ink);
+      font-weight: 800;
+      font-size: 28px;
+      letter-spacing: .2px;
     }
 
-    /* Blocks */
+    /* Blue blocks (square corners) */
     .block{
       background: var(--panel);
       padding: 28px;
-      border-radius: 0; /* square corners */
+      border-radius: 0;          /* square */
     }
-    .block h2{
-      margin: 0 0 16px;
-      color: var(--ink);
-      font-weight: 800;
-      font-size: 24px;
-    }
+    .block h3{ margin: 0 0 14px; color: var(--ink); font-size: 22px; }
     .block p{ margin: 10px 0; }
     .block ul{ margin: 12px 0 0 20px; }
     .block li{ margin: 6px 0; }
 
-    /* Right stats stack */
-    .stat-stack{
-      display: grid;
-      gap: 16px;
-    }
-    .stat{
-      background: var(--panel);
-      padding: 18px;
-    }
-    .stat p{
-      margin: 0;
-      font-size: 18px;
-      color: var(--ink-sub);
-    }
-    .stat b{
-      color: var(--ink);
-      font-weight: 800;
-    }
+    /* Right: Stats stack (all same blue as left) */
+    .stat-stack{ display: grid; gap: 16px; }
+    .stat{ background: var(--panel); padding: 18px; border-radius: 0; }
+    .stat p{ margin: 0; font-size: 18px; }
+    .stat b{ color: var(--ink); font-weight: 800; }
   </style>
 </head>
 <body>
   <div class="container">
     <div class="grid">
-      <!-- LEFT block -->
-      <section class="block" aria-labelledby="pw-title">
-        <h2 id="pw-title">Past Wins</h2>
-        <h3>Alabama Occupational Licensing</h3>
-        <p>
-          RBIJ mobilized businesses — and their leaders — to publicly and privately support
-          legislation that expands access to occupational licensing in Alabama by:
-        </p>
-        <ul>
-          <li>Sign-on statement</li>
-          <li>Private advocacy</li>
-        </ul>
-        <p>
-          In May 2025, Governor Ivey signed this legislation into law, ensuring fairer access to
-          licensed jobs, reduced recidivism, and an expansion of Alabama’s economy.
-        </p>
+      <!-- LEFT COLUMN -->
+      <section>
+        <h2 class="col-title">Past wins</h2>
+        <div class="block" aria-labelledby="pw-title">
+          <h3 id="pw-title">Alabama Occupational Licensing</h3>
+          <p>
+            RBIJ mobilized businesses — and their leaders — to publicly and privately support
+            legislation that expands access to occupational licensing in Alabama by:
+          </p>
+          <ul>
+            <li>Sign-on statement</li>
+            <li>Private advocacy</li>
+          </ul>
+          <p>
+            In May 2025, Governor Ivey signed this legislation into law, ensuring fairer access to
+            licensed jobs, reduced recidivism, and an expansion of Alabama’s economy.
+          </p>
+        </div>
       </section>
 
-      <!-- RIGHT block -->
-      <section class="block" aria-labelledby="stats-title">
-        <h2 id="stats-title">Stats</h2>
-        <div class="stat-stack">
+      <!-- RIGHT COLUMN -->
+      <section>
+        <h2 class="col-title">Stats</h2>
+        <div class="stat-stack" aria-label="Alabama stats">
           <div class="stat">
             <p><b>~900,000 Alabamians — 22%</b> of the state’s adult population have some form of arrest or conviction record.</p>
           </div>
