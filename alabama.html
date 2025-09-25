@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Alabama – Past wins & Stats</title>
+  <title>Alabama – Past Wins & Stats</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     /* ===== Theme ===== */
@@ -28,8 +28,22 @@
     /* Links */
     a{
       color: var(--ink);
+      text-decoration: none;
+    }
+    a:hover,
+    a:focus{
       text-decoration: underline;
       text-underline-offset: 2px;
+    }
+    a:focus-visible{
+      outline: 2px solid var(--ink);
+      outline-offset: 2px;
+    }
+    /* external-link cue for new-tab links */
+    a[target="_blank"]::after{
+      content: "↗";
+      margin-left: 4px;
+      font-size: .9em;
     }
 
     /* Two equal columns */
@@ -73,7 +87,7 @@
     <div class="grid">
       <!-- LEFT COLUMN -->
       <section>
-        <h2 class="col-title">Past wins</h2>
+        <h2 class="col-title">Past Wins</h2>
         <div class="block" aria-labelledby="pw-title">
           <h3 id="pw-title">Alabama Occupational Licensing</h3>
           <p>
