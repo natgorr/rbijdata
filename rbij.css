@@ -1,7 +1,7 @@
 /* ===== Theme ===== */
 :root{
   --page-bg: #ffffff;
-  --panel:   #cfe0f1;
+  --panel:   #c9deee;  /* updated blue */
   --ink:     #143b63;
   --ink-sub: #2a4d7e;
   --gap:     24px;
@@ -19,10 +19,12 @@ body{
 }
 .container{ max-width: 1100px; margin: 0 auto; }
 
+/* Links (underlined by default, accessible focus) */
 a{ color: var(--ink); text-decoration: underline; text-underline-offset: 2px; }
 a:hover, a:focus{ text-decoration: underline; text-underline-offset: 2px; }
 a:focus-visible{ outline: 2px solid var(--ink); outline-offset: 2px; }
 
+/* Column titles */
 .col-title{
   margin: 0 0 14px 0;
   color: var(--ink);
@@ -31,23 +33,27 @@ a:focus-visible{ outline: 2px solid var(--ink); outline-offset: 2px; }
   letter-spacing: .2px;
 }
 
+/* Blue blocks */
 .block{
   background: var(--panel);
-  padding: 18px;
-  border-radius: 0;
+  padding: 18px;           /* tightened */
+  border-radius: 0;        /* square corners */
 }
 .block h3{ margin: 0 0 12px; color: var(--ink); font-size: 16px; }
 .block p{ margin: 10px 0; }
 .block ul{ margin: 10px 0 0 18px; }
 .block li{ margin: 4px 0; }
 
-.issue + .issue{ margin-top:20px; padding-top:10px; border-top:1px solid rgba(20,59,99,.15); }
+/* Separation between subsections within a single Past Wins block (space only) */
+.issue + .issue{ margin-top:16px; padding-top:0; border-top:none; }
 
+/* Stats */
 .stat-stack{ display: grid; gap: 12px; }
 .stat{ background: var(--panel); padding: 12px; border-radius: 0; }
 .stat p{ margin: 0; font-size: 12px; }
 .stat b{ color: var(--ink); font-weight: 800; }
 
+/* Grid */
 .section-grid{
   display: grid;
   grid-template-columns: 1fr 1fr;
