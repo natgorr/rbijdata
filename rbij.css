@@ -42,7 +42,7 @@ a:focus-visible{ outline: 2px solid var(--ink); outline-offset: 2px; }
   padding: 18px;             /* tightened */
   border-radius: 0;          /* square corners */
 }
-.block h3{ margin: 0 0 12px; color: var(--ink); font-size: 16px; font-weight: 400; } /* not bold */
+.block h3{ margin: 0 0 12px; color: var(--ink); font-size: 16px; font-weight: 400 !important; } /* not bold */
 .block p{ margin: 10px 0; }
 .block ul{ margin: 10px 0 0 18px; }
 .block li{ margin: 4px 0; }
