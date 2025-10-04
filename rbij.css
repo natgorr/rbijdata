@@ -1,9 +1,12 @@
+/* Load Inter for consistent typography */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+
 /* ===== Theme ===== */
 :root{
   --page-bg: #ffffff;
-  --panel:   #c9deee;  /* updated blue */
-  --ink:     #143b63;
-  --ink-sub: #2a4d7e;
+  --panel:   #c9deee;  /* blue blocks */
+  --ink:     #024269;  /* headings / strong */
+  --ink-sub: #024269;  /* body text */
   --gap:     24px;
 }
 
@@ -13,7 +16,7 @@ body{
   background: var(--page-bg);
   color: var(--ink-sub);
   line-height: 1.55;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Arial, sans-serif;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
   padding: 40px 32px;
   font-size: 12px;
 }
@@ -29,17 +32,17 @@ a:focus-visible{ outline: 2px solid var(--ink); outline-offset: 2px; }
   margin: 0 0 14px 0;
   color: var(--ink);
   font-weight: 800;
-  font-size: 16px;
+  font-size: 18px;           /* a tad bigger */
   letter-spacing: .2px;
 }
 
 /* Blue blocks */
 .block{
   background: var(--panel);
-  padding: 18px;           /* tightened */
-  border-radius: 0;        /* square corners */
+  padding: 18px;             /* tightened */
+  border-radius: 0;          /* square corners */
 }
-.block h3{ margin: 0 0 12px; color: var(--ink); font-size: 16px; }
+.block h3{ margin: 0 0 12px; color: var(--ink); font-size: 16px; font-weight: 400; } /* not bold */
 .block p{ margin: 10px 0; }
 .block ul{ margin: 10px 0 0 18px; }
 .block li{ margin: 4px 0; }
