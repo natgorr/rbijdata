@@ -1,65 +1,17 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Georgia</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="rbij.css" />
+<meta charset="utf-8"/>
+<title>Georgia</title>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<link href="rbij.css" rel="stylesheet"/>
 </head>
 <body>
-  <div class="container">
-    <div class="section-grid">
-      <!-- State block styled like Past Wins -->
-      <section>
-        <h2 class="col-title">Georgia — State Highlights</h2>
-        <div class="block">
-          <div class="issue">
-            <h3>Example highlight header</h3>
-            <p>Use this space like the Past Wins block to summarize notable recent outcomes or context for Georgia.</p>
-            <ul>
-              <li>Notable item 1 with short description.</li>
-              <li>Notable item 2 with short description.</li>
-              <li>Notable item 3 with short description.</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <!-- Stats (optional) -->
-      <section>
-        <h2 class="col-title">Stats</h2>
-        <div class="block">
-          <div class="issue">
-            <h3>Example metric</h3>
-            <p>Add data points, charts, or bullet metrics as done in other states' Stats sections.</p>
-            <ul>
-              <li>Metric A</li>
-              <li>Metric B</li>
-              <li>Metric C</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <!-- Current Activity -->
-      <section data-current-activity>
-        <h2 class="col-title">Current Activity</h2>
-        <div class="block">
-          <div class="issue">
-            <h3>Ongoing initiative</h3>
-            <p>Describe ongoing legislative or advocacy actions in Georgia.</p>
-            <ul>
-              <li>Action item 1</li>
-              <li>Action item 2</li>
-              <li>Action item 3</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-    </div>
-  </div>
-
-  <script>
+<div class="container">
+<div class="section-grid"><section data-current-activity="True"><h2 class="col-title">Current Activity</h2><div class="block"><div class="issue"><p>—</p></div></div></section><section><h2 class="col-title">Stats</h2><div class="block"><div class="issue"><p>—</p></div></div></section></div>
+</div>
+<script>
   document.addEventListener("DOMContentLoaded", function(){
   const grid = document.querySelector(".section-grid");
   const current = document.querySelector("section[data-current-activity]");
