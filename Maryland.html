@@ -8,23 +8,46 @@
 </head>
 <body>
   <div class="container">
-    <div class="section-grid one-col">
+    <div class="section-grid">
+      <!-- Current Activity (Left) -->
       <section data-current-activity>
         <h2 class="col-title">Current Activity</h2>
         <div class="block">
           <div class="issue">
-            <h3>Maryland — Ongoing Efforts</h3>
-            <p>Replace this with the state's current activity text from the PDF (business sign-ons, private advocacy, testimony, op-eds/media, speaking opportunities, toolkits, etc.).</p>
-            <ul>
-              <li>Business engagement: sign-on letters, private advocacy</li>
-              <li>Public testimony and media/op-eds</li>
-              <li>Speaking opportunities and partnerships</li>
-            </ul>
-            <p class="small">Tip: If this state later gets Past Wins and/or Stats, remove <code>one-col</code> on the grid and add those sections; the inline placement script used on other pages will automatically move Current Activity under the shorter column on desktop.</p>
+            <p>Replace with Current Activity text for Maryland</p>
+          </div>
+        </div>
+      </section>
+      <!-- Stats (Right) -->
+      <section>
+        <h2 class="col-title">Stats</h2>
+        <div class="block">
+          <div class="issue">
+            <p>Replace with Stats text for Maryland</p>
           </div>
         </div>
       </section>
     </div>
   </div>
+  <script>
+document.addEventListener("DOMContentLoaded", function(){
+  const grid = document.querySelector(".section-grid");
+  const current = document.querySelector("section[data-current-activity]");
+  if(!grid || !current) return;
+  const isSingleColumn = window.matchMedia("(max-width: 900px)").matches || grid.classList.contains("one-col");
+  if(isSingleColumn) return;
+  const sections = grid.querySelectorAll(":scope > section");
+  if(sections.length < 2) return;
+  const first = sections[0];
+  const second = sections[1];
+  const h1 = first.getBoundingClientRect().height;
+  const h2 = second.getBoundingClientRect().height;
+  if(h1 <= h2){
+    first.insertAdjacentElement("afterend", current);
+  }else{
+    second.insertAdjacentElement("afterend", current);
+  }
+});
+  </script>
 </body>
 </html>
