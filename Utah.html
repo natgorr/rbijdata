@@ -1,53 +1,35 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Utah</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="rbij.css" />
+<meta charset="utf-8"/>
+<title>Utah</title>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<link href="rbij.css" rel="stylesheet"/>
 </head>
 <body>
-  <div class="container">
-    <div class="section-grid">
-      <!-- Current Activity (Left) -->
-      <section data-current-activity>
-        <h2 class="col-title">Current Activity</h2>
-        <div class="block">
-          <div class="issue">
-            <p>Replace with Current Activity text for Utah</p>
-          </div>
-        </div>
-      </section>
-      <!-- Stats (Right) -->
-      <section>
-        <h2 class="col-title">Stats</h2>
-        <div class="block">
-          <div class="issue">
-            <p>Replace with Stats text for Utah</p>
-          </div>
-        </div>
-      </section>
-    </div>
-  </div>
-  <script>
-document.addEventListener("DOMContentLoaded", function(){
-  const grid = document.querySelector(".section-grid");
-  const current = document.querySelector("section[data-current-activity]");
-  if(!grid || !current) return;
-  const isSingleColumn = window.matchMedia("(max-width: 900px)").matches || grid.classList.contains("one-col");
-  if(isSingleColumn) return;
-  const sections = grid.querySelectorAll(":scope > section");
-  if(sections.length < 2) return;
-  const first = sections[0];
-  const second = sections[1];
-  const h1 = first.getBoundingClientRect().height;
-  const h2 = second.getBoundingClientRect().height;
-  if(h1 <= h2){
-    first.insertAdjacentElement("afterend", current);
-  }else{
-    second.insertAdjacentElement("afterend", current);
-  }
-});
-  </script>
+<div class="container">
+<div class="section-grid">
+<!-- Current Activity (Left) -->
+<section data-current-activity="">
+<h2 class="col-title">Current Activity</h2>
+<div class="block">
+<div class="issue">
+<p>Replace with Current Activity text for Utah</p>
+</div>
+</div>
+</section>
+<!-- Stats (Right) -->
+<section>
+<h2 class="col-title">Stats</h2>
+<div class="block">
+<div class="issue">
+<p>Replace with Stats text for Utah</p>
+</div>
+</div>
+</section>
+</div>
+</div>
+
 </body>
 </html>
