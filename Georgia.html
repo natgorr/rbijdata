@@ -11,30 +11,6 @@
 <div class="container">
 <div class="section-grid"><section data-current-activity="True"><h2 class="col-title">Current Activity</h2><div class="block"><div class="issue"><p>—</p></div></div></section><section><h2 class="col-title">Stats</h2><div class="block"><div class="issue"><p>—</p></div></div></section></div>
 </div>
-<script>
-  document.addEventListener("DOMContentLoaded", function(){
-  const grid = document.querySelector(".section-grid");
-  const current = document.querySelector("section[data-current-activity]");
-  if(!grid || !current) return;
 
-  const isSingleColumn = window.matchMedia("(max-width: 900px)").matches || grid.classList.contains("one-col");
-  if(isSingleColumn) return;
-
-  const sections = grid.querySelectorAll(":scope > section");
-  if(sections.length < 2) return;
-
-  const first = sections[0];
-  const second = sections[1];
-
-  const h1 = first.getBoundingClientRect().height;
-  const h2 = second.getBoundingClientRect().height;
-
-  if(h1 <= h2){
-    first.insertAdjacentElement("afterend", current);
-  }else{
-    second.insertAdjacentElement("afterend", current);
-  }
-});
-  </script>
 </body>
 </html>
